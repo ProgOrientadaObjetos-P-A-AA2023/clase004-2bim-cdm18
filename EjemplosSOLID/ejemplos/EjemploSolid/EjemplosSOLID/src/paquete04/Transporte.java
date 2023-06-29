@@ -10,11 +10,12 @@ package paquete04;
  * @author reroes
  */
 public abstract class Transporte {
+
     protected double tarifa;
-    
+
     public abstract void establecerTarifa();
-    
-    public double obtenerTarifa(){
+
+    public double obtenerTarifa() {
         return tarifa;
     }
 }

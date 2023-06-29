@@ -10,38 +10,50 @@ package paquete03;
  * @author reroes
  */
 public class TiposTransporte {
+
     private double promedioTarifas;
     private TransporteTaxi ttaxi;
     private TransporteBus ttbus;
-    private TransporteTransvia transvia;
-    private TransporteAereo aereo;
-    private TransporteMaritimo maritimo;
-    
-    public void establecerTransporteTaxi(TransporteTaxi taxi){
+    private TransporteTransvia ttransvia;
+   // private TransporteAereo taereo;
+  //  private TransporteMaritimo tmaritimo;
+
+    public void establecerTransporteTaxi(TransporteTaxi taxi) {
         ttaxi = taxi;
     }
-    
-    public void establecerTransporteBus(TransporteBus bus){
+
+    public void establecerTransporteBus(TransporteBus bus) {
         ttbus = bus;
     }
     
-    public TransporteTaxi obtenerTransporteTaxi(){
+     public void establecerTransporteTransvia(TransporteTransvia transvia) {
+       ttransvia = transvia;
+    }
+    
+    
+    public TransporteTaxi obtenerTransporteTaxi() {
         return ttaxi;
     }
     
-    public TransporteBus obtenerTransporteBus(){
+     
+    public TransporteTransvia obtenerTransporteTransvia() {
+        return ttransvia;
+    }
+    
+    public TransporteBus obtenerTransporteBus() {
         return ttbus;
     }
-    
-    public void establecerPromedioTarifas(){
-        promedioTarifas = (obtenerTransporteBus().obtenerTarifa() + 
-                obtenerTransporteTaxi().obtenerTarifa())/2;
-        
+
+    public void establecerPromedioTarifas() {
+        promedioTarifas = (obtenerTransporteBus().obtenerTarifa()
+                + obtenerTransporteTaxi().obtenerTarifa() + 
+                obtenerTransporteTransvia().obtenerTarifa()) / 3;
     }
     
-    public double obtenerPromedioTarifas(){
+    
+    
+    public double obtenerPromedioTarifas() {
         return promedioTarifas;
     }
-    
-    
+
 }

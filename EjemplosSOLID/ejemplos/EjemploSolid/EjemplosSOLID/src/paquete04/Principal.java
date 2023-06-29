@@ -3,6 +3,8 @@
  */
 package paquete04;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author reroes
@@ -17,12 +19,22 @@ public class Principal {
         taxi.establecerCooperativaTaxi("Yahuarcuna");
         taxi.establecerTarifa();
         
+        TransporteTransvia trans = new TransporteTransvia();
+        trans.establecerCooperativaTransvia("Rutas Loja");
+        trans.establecerTarifa();
+        
         TiposTransporte tipos = new TiposTransporte();
-        tipos.establecerTransporteBus(bus);
-        tipos.establecerTransporteTaxi(taxi);
+        ArrayList <Transporte> transportes = new ArrayList();
+        
+        transportes.add(bus);
+        transportes.add(taxi);
+        transportes.add(trans);
+        
+        tipos.establecerTransportes(transportes);
+      
         tipos.establecerPromedioTarifas();
         
-        System.out.printf("Promedio de Tarifas: %.2f", 
+        System.out.printf("Promedio de Tarifas: %.2f\n", 
                 tipos.obtenerPromedioTarifas());
         
     }
